@@ -1,0 +1,18 @@
+/* ===== STYLES SPÉCIFIQUES INDEX.HTML ===== */
+
+.contact-link {
+  color: var(--primary-pink);
+  text-decoration: none;
+  font-weight: bold;
+  transition: opacity var(--transition-smooth);
+}
+
+.contact-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Animations sur scroll */
+section .card {
+  animation-delay: 0.2s;
+}
