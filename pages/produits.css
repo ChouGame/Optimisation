@@ -29,11 +29,13 @@
   position: absolute;
   bottom: -15px;
   right: -15px;
-  width: 90px;
+  width: auto;
   height: auto;
+  font-size: 80px;
   opacity: 0.9;
   animation: float 4s ease-in-out infinite;
   pointer-events: none;
+  user-select: none;
 }
 
 @keyframes float {
