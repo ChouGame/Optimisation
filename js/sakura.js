@@ -8,8 +8,9 @@
   
   if (!sakuraContainer) return;
 
-  // Configuration basée sur la page
+  // Détecte si on est sur la page produits ou accueil
   const isProductsPage = window.location.pathname.includes('produits');
+  
   const config = {
     count: isProductsPage ? 25 : 28,
     minSize: isProductsPage ? 50 : 60,
@@ -23,10 +24,16 @@
   for (let i = 0; i < config.count; i++) {
     const flower = document.createElement('img');
     
-    flower.src = isProductsPage ? '../assets/fleur.png' : 'assets/fleur.png';
+    // Chemin correct vers le fichier fleur.png
+    flower.src = 'assets/fleur.png';
     flower.className = 'flower';
     flower.alt = ''; // Image décoration, pas de label
     flower.setAttribute('aria-hidden', 'true');
+    
+    // Gère les erreurs de chargement
+    flower.onerror = function() {
+      this.style.display = 'none';
+    };
     
     // Randomise la position et l'animation
     const left = Math.random() * 100;
