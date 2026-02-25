@@ -196,7 +196,6 @@ section h2 {
 }
 
 .socials a {
-  font-size: 2.5em;
   color: var(--text-white);
   transition: color var(--transition-smooth), transform var(--transition-smooth);
   display: inline-flex;
@@ -208,6 +207,13 @@ section h2 {
   z-index: 5;
   position: relative;
   text-decoration: none;
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  stroke: currentColor;
+  fill: currentColor;
 }
 
 .socials a:hover {
