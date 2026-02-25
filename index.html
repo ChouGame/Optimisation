@@ -19,7 +19,7 @@
 
   <!-- LOGO -->
   <div class="top-logo">
-    <img src="assets/logo.png" alt="ChouGame Logo">
+    <img src="assets/logo.png" alt="ChouGame Logo" onerror="this.style.display='none'">
   </div>
 
   <!-- NAVIGATION DESKTOP -->
@@ -57,7 +57,7 @@
     <div class="card">
       <h2 id="contact-heading">Contact</h2>
       <p>
-        📧 <a href="/cdn-cgi/l/email-protection#0764646f687260666a62476e646b6872632964686a" class="contact-link"><span class="__cf_email__" data-cfemail="2241414a4d5745434f47624b414e4d57460c414d4f">[email&#160;protected]</span></a><br>
+        📧 <a href="mailto:cchougame@icloud.com" class="contact-link">cchougame@icloud.com</a><br>
         💬 Discord : chougame
       </p>
 
@@ -83,4 +83,58 @@
     <a href="index.html" aria-label="Accueil"><i class="fa fa-house" aria-hidden="true"></i></a>
     <a href="produits.html" aria-label="Produits"><i class="fa fa-box" aria-hidden="true"></i></a>
     <a href="#apropos" aria-label="À propos"><i class="fa fa-circle-info" aria-hidden="true"></i></a>
-    <a href="#contact" aria-label="Contact"><i class="fa fa-envel
+    <a href="#contact" aria-label="Contact"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  </div>
+
+  <script>
+    // SAKURA FLOWERS - Code intégré directement
+    (function() {
+      const container = document.getElementById('sakura');
+      if (!container) return;
+      
+      for (let i = 0; i < 28; i++) {
+        const flower = document.createElement('div');
+        flower.textContent = '🌸';
+        flower.style.position = 'absolute';
+        flower.style.top = '-100px';
+        flower.style.left = Math.random() * 100 + 'vw';
+        flower.style.fontSize = (50 + Math.random() * 40) + 'px';
+        flower.style.opacity = '0.85';
+        flower.style.pointerEvents = 'none';
+        flower.style.userSelect = 'none';
+        flower.style.animation = 'fall linear infinite';
+        flower.style.animationDuration = (10 + Math.random() * 15) + 's';
+        flower.style.animationDelay = Math.random() * 10 + 's';
+        container.appendChild(flower);
+      }
+    })();
+
+    // REVEAL ON SCROLL
+    (function() {
+      const reveals = document.querySelectorAll('.reveal');
+      if (!reveals.length) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      });
+
+      reveals.forEach(el => observer.observe(el));
+      
+      // Initial reveal
+      reveals.forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+          el.classList.add('active');
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
